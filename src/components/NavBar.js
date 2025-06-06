@@ -1,11 +1,11 @@
 import React, { useState, useRef, useContext } from "react";
 import { connect } from "react-redux";
-
 import { Link, useNavigate } from "react-router-dom";
+import { redirect } from "react-router";
 
 // import Profil from "assets/images/usernav.png";
 // import Logout from "assets/images/logout.svg";
-import { API } from "config/api";
+import { API, BASE_URL } from "config/api";
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
   const target = useRef(null);
@@ -29,10 +29,15 @@ const NavBar = (props) => {
       <div class="ms-auto">
         <ul class="navbar-nav flex-row gap-3">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="/top-up">Top Up</a>
+            <div class="nav-link text-dark"
+            onClick={() => redirect(`/top-up`)}
+            >Top Up</div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Transaction</a>
+            <div class="nav-link text-dark"
+            onClick={() => redirect(`/transaction`)}
+            >Transaction</div>
+            {/* <a class="nav-link text-dark" href={`${BASE_URL}/transaction`}>Transaction</a> */}
           </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Akun</a>

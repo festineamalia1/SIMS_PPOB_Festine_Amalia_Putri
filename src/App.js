@@ -16,8 +16,8 @@ import AkunPage from "pages/AkunPage";
 function App() {
   return (
     <div className="App">
-       <Router>
-      {/* <Switch> */}
+       <BrowserRouter>
+     
         <Routes>
           <Route exact path="/" element={<LandingPage/>} />
          <Route exact path="/home" element={<Home/>} /> 
@@ -28,8 +28,7 @@ function App() {
   
           
         </Routes>
-  {/* </Switch> */}
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
