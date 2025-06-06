@@ -29,7 +29,7 @@ const NavBar = (props) => {
       <div class="ms-auto">
         <ul class="navbar-nav flex-row gap-3">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Top Up</a>
+            <a class="nav-link text-dark" href="/top-up">Top Up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Transaction</a>

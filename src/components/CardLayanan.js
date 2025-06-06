@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import Profil from "assets/images/usernav.png";
 // import Logout from "assets/images/logout.svg";
 import { API } from "config/api";
-const CardLayanan = (props) => {
+const CardLayanan = ({fotoService, namaLayanan}) => {
   const [show, setShow] = useState(false);
   const target = useRef(null);
   const navigate = useNavigate();
@@ -16,11 +16,11 @@ const CardLayanan = (props) => {
       {/* isLoading || !chanels.chanels ? ( // <h1>Loading...</h1>
       ) : error ? ( // <h1>error {error.message} </h1>
        ) : */}
-<div className="card border-0">
+<div className="card border-0 card-layanan">
   <div className="row d-flex align-items-center justify-content-center">
-  <img src={require(`../assets/images/Listrik.png`)} alt="Logo"  style={{maxWidth: '80px'}}/> 
+  <img src={fotoService} alt="Logo"  style={{maxWidth: '80px'}}/> 
 
-    <p className="text-center pt-2">listrik</p>
+    <span className="text-layanan text-center pt-2">{namaLayanan}</span>
  
   </div>
 </div>
