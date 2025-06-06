@@ -16,7 +16,7 @@ import AkunPage from "pages/AkunPage";
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
+       <Router>
       {/* <Switch> */}
         <Routes>
           <Route exact path="/" element={<LandingPage/>} />
@@ -29,7 +29,7 @@ function App() {
           
         </Routes>
   {/* </Switch> */}
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
