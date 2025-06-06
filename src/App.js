@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
        <BrowserRouter>
-     
         <Routes>
           <Route exact path="/" element={<LandingPage/>} />
          <Route exact path="/home" element={<Home/>} /> 
@@ -28,6 +27,7 @@ function App() {
   
           
         </Routes>
+
       </BrowserRouter>
     </div>
   );
