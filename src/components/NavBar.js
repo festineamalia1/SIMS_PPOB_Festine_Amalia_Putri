@@ -20,7 +20,9 @@ const NavBar = (props) => {
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
          <div class="logo mb-2 d-flex align-items-center justify-content-center"> 
-          <img src={require(`../assets/images/Logo.png`)} alt="Logo" className="w-100 px-2"/> 
+          <img src={require(`../assets/images/Logo.png`)} alt="Logo" className="w-100 px-2"
+          onClick={() => navigate(`/`)}
+          /> 
           SIMS PPOB
           </div>
         {/* <span class="fw-semibold">SIMS PPOB</span> */}
@@ -30,17 +32,18 @@ const NavBar = (props) => {
         <ul class="navbar-nav flex-row gap-3">
           <li class="nav-item">
             <div class="nav-link text-dark"
-            onClick={() => redirect(`/top-up`)}
+            onClick={() => navigate(`/top-up`)}
             >Top Up</div>
           </li>
           <li class="nav-item">
             <div class="nav-link text-dark"
-            onClick={() => redirect(`/transaction`)}
+            onClick={() => navigate(`/transaksi`)}
             >Transaction</div>
             {/* <a class="nav-link text-dark" href={`${BASE_URL}/transaction`}>Transaction</a> */}
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Akun</a>
+            <div class="nav-link text-dark" 
+            onClick={() => navigate(`/akun-page`)}>Akun</div>
           </li>
         </ul>
       </div>

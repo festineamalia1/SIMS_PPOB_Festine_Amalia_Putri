@@ -130,6 +130,8 @@ console.log("data service", dataService)
               <CardLayanan
               fotoService={data?.service_icon}
               namaLayanan={data?.service_name}
+              idLayanan={data?.service_code}
+              tarifLayanan={data?.service_tariff}
               />
               ))}
                 
