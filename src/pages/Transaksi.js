@@ -197,7 +197,7 @@ console.log('history', dataHistory)
           <span>{moment(data.created_on).format('MMMM Do YYYY, h:mm:ss a')}</span>
           </div>
       </div>
-      <div className="col">
+      <div className="col ">
         <span>{data.description}</span>
       </div>
     </div>
