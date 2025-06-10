@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import NavBar from "../components/NavBar";
 import CardLayanan from "../components/CardLayanan"
 import ProfileSaldo from "../components/ProfileSaldo"
+import moment from "moment";
 import {
   Container,
   Row,
@@ -25,6 +26,41 @@ export default function Transaksi() {
   const [dataBalance, setDataBalance] = useState([]);
 
 
+ const myDummy = 
+       {
+  "status": 0,
+  "message": "Get History Berhasil",
+  "data": {
+    "offset": 0,
+    "limit": 3,
+    "records": [
+      {
+        "invoice_number": "INV17082023-001",
+        "transaction_type": "TOPUP",
+        "description": "Top Up balance",
+        "total_amount": 100000,
+        "created_on": "2023-08-17T10:10:10.000Z"
+      },
+      {
+        "invoice_number": "INV17082023-002",
+        "transaction_type": "PAYMENT",
+        "description": "PLN Pascabayar",
+        "total_amount": 10000,
+        "created_on": "2023-08-17T11:10:10.000Z"
+      },
+      {
+        "invoice_number": "INV17082023-003",
+        "transaction_type": "PAYMENT",
+        "description": "Pulsa Indosat",
+        "total_amount": 40000,
+        "created_on": "2023-08-17T12:10:10.000Z"
+      }
+    ]
+  }
+}
+      ;
+
+        const [dataHistory, setDataHistory] = useState([]);
 
 const TOKEN = localStorage.getItem('token')
 console.log('TOKEN', TOKEN)
@@ -68,15 +104,49 @@ console.log('TOKEN', TOKEN)
       });
   };
 
+    const [count, setCount] = useState(1);
+ const increment = () => {
+    setCount(count + 1);
+    fetchTransaksiHistory(count)
+  };
+
+  console.log("count", count)
+
+  const fetchTransaksiHistory = (c=0) => {
+    const headers = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      'Authorization': `Bearer ${TOKEN}`
+    };
+    axios
+      .get(
+        `${API}/transaction/history?offset=0&limit=${5 + c}`,
+        {
+          headers: headers,
+        }
+      )
+      .then(function (response) {
+        console.log(response);
+        
+       setDataHistory(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(
+          error.response.data.message
+        );
+      });
+  };
+
+
   
 
 
-
+console.log('history', dataHistory)
 
   useEffect(() => {
     fetchDataProfile();
     fetchDataBalance();
-    
+    fetchTransaksiHistory();
   }, []);
 
   return (
@@ -109,31 +179,37 @@ console.log('TOKEN', TOKEN)
      
 
         </div>
+           {dataHistory?.data?.data?.records &&
+                      dataHistory?.data?.data?.records.map((data, i) => (
         <div className="row mt-3">
+           
          <div class="card">
   <div class="card-body">
     <div className="row">
       <div className="col">
         <div className="row">
            <div className="fw-bold fs-5"> 
-            + RP. 10.000
+            {data.transaction_type == "TOPUP" ? "+ " : data.transaction_type == "PAYMENT" ? "- " : ''}
+             RP. {data.total_amount}
           </div>
         </div>
         <div className="row">
-          <span>aasasasa</span>
+          <span>{moment(data.created_on).format('MMMM Do YYYY, h:mm:ss a')}</span>
           </div>
       </div>
       <div className="col">
-        <span>Pembayaran listrik</span>
+        <span>{data.description}</span>
       </div>
     </div>
   </div>
 </div>
+
      
         </div>
+        ))} 
         <div className="row mt-5">
           <div class="login-text">
-              <a className="login-link" onClick={() => {}} >di sini</a>
+              <a className="login-link" onClick={increment} >di sini</a>
             </div>
         </div>
       </div>
