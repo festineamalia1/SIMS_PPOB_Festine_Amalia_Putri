@@ -16,7 +16,7 @@ import AkunPage from "pages/AkunPage";
 function App() {
   return (
     <div className="App">
- <BrowserRouter basename="/SIMS_PPOB_Festine_Amalia_Putri">
+ <HashRouter >
         <Routes>
           <Route exact path="/" element={<LandingPage/>} />
          <Route exact path="/home" element={<Home/>} /> 
@@ -28,7 +28,7 @@ function App() {
           
         </Routes>
 
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
