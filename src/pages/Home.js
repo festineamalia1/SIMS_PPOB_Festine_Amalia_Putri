@@ -169,7 +169,7 @@ console.log("data benner", dataBanner?.data?.data)
         spaceBetween={30}
         freeMode={true}
         autoplay={{
-          delay: 1000,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, FreeMode, Pagination]}
