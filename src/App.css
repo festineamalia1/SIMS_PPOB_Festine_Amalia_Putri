@@ -212,14 +212,14 @@ align-items: center;
   height: 110px;
  }
 
-  .avatar-container {
+ .avatar-container {
       position: relative;
-      width: 50px;
-      
+      width: 120px;
+      /* margin: 50px auto; */
     }
 
     .avatar-img {
-      width:30%;
+      width: 100%;
       height: auto;
       border-radius: 50%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -237,6 +237,14 @@ align-items: center;
 
     .edit-icon i {
       font-size: 14px;
+    }
+
+    .form-upload-avatar{
+      display: none;
+    }
+
+    .logo-sims{
+      width: 50px;
     }
 
 /* ---------------------------------------------------------------------------------------------------- */

@@ -6,6 +6,7 @@ import { API, setAuthToken } from "config/api";
 import { connect } from "react-redux";
 import { handleLogin } from "actions";
 import axios from "axios";
+
 const ProfileForm = ({dataProfile}) => {
   const navigate = useNavigate ();
    const [edit, setEdit] = useState(false);
@@ -52,7 +53,7 @@ const handleEditProfile = (e) => {
   return (
    <>
     {/* <div class="col d-flex align-items-center justify-content-center mx-8">Nama Profile</div> */}
-   <div class="form-heading d-flex align-items-center justify-content-center mx-8">Nama Profile</div>
+   <div class="form-heading d-flex align-items-center justify-content-center mx-8">{lastName} {lastName}</div>
   <div className="row mt-5">
      <form className="px-5">
             <div className="mb-3">

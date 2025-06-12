@@ -18,14 +18,14 @@ const NavBar = (props) => {
        ) : */}
 <nav class="navbar navbar-expand-lg bg-white border-bottom">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-         <div class="logo mb-2 d-flex align-items-center justify-content-center"> 
+      <a class="navbar-brand d-flex align-items-center">
+         <div class="logo mb-2 d-flex align-items-center justify-content-center"  onClick={() => navigate(`/home`)}> 
           <img src={require(`../assets/images/Logo.png`)} alt="Logo" className="w-100 px-2"
-          onClick={() => navigate(`/`)}
+         
           /> 
           SIMS PPOB
           </div>
-        {/* <span class="fw-semibold">SIMS PPOB</span> */}
+
       </a>
 
       <div class="ms-auto">
