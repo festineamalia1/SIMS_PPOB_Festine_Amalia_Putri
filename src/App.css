@@ -207,6 +207,11 @@ align-items: center;
   line-height: 15px;
  }
 
+ .banner-image{
+  width: 240px;
+  height: 110px;
+ }
+
 /* ---------------------------------------------------------------------------------------------------- */
 .logo-title{
   width: 383px;

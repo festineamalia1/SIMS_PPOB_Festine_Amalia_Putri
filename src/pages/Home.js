@@ -17,6 +17,11 @@ import {
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { API } from "config/api";
 import axios from "axios";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+import { FreeMode, Pagination, Autoplay} from 'swiper/modules';
 
 // import Barang from "../assets/images/barang1.jpg";
 
@@ -27,7 +32,7 @@ const navigate = useNavigate();
   const [userData, setUserData] = useState([]);
   const [dataBalance, setDataBalance] = useState([]);
   const [dataService, setDataService] = useState([]);
-
+  const [dataBanner, setDataBanner] = useState([]);
 
 const TOKEN = localStorage.getItem('token')
 console.log('TOKEN', TOKEN)
@@ -71,6 +76,25 @@ console.log('TOKEN', TOKEN)
       });
   };
 
+    const fetchDataBanner = () => {
+    // setIsLoading(true);
+    axios
+      .get(`${API}/banner`, 
+        {
+    headers: {
+        'Authorization': `Bearer ${TOKEN}`
+    }
+}
+)
+      .then(function (response) {
+        // setIsLoading(false);
+       setDataBanner(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
     const fetchDataService = () => {
     // setIsLoading(true);
     axios
@@ -91,9 +115,7 @@ console.log('TOKEN', TOKEN)
   };
 
 
-
-
-console.log("data service", dataService)
+console.log("data benner", dataBanner?.data?.data)
 
 
 
@@ -102,6 +124,7 @@ console.log("data service", dataService)
     fetchDataProfile();
     fetchDataBalance();
     fetchDataService();
+    fetchDataBanner();
   }, []);
 
   console.log("userData", userData?.data?.data?.first_name);
@@ -137,6 +160,28 @@ console.log("data service", dataService)
                 
             </div>
             </div>
+        </div>
+        <div className="row mt-5">
+          <div className="col">
+            
+            <Swiper
+        slidesPerView={4.3}
+        spaceBetween={30}
+        freeMode={true}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, FreeMode, Pagination]}
+        className="mySwiper"
+      >
+         {dataBanner?.data?.data &&
+                      dataBanner?.data?.data.map((data, i) => (
+        <SwiperSlide> <img src={`${data?.banner_image}`} alt="banner" className="banner-image"/> </SwiperSlide>
+          ))}
+      </Swiper>
+    
+          </div>
         </div>
       </div>
     </section>
