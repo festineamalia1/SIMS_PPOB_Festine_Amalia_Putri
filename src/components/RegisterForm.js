@@ -129,67 +129,6 @@ const RegisterForm = (props) => {
           </form>
    </>
     
-          
-    // <Col>
-    //   <Row>
-    //     <Modal.Dialog>
-    //       <Modal.Body>
-    //         <div
-    //           style={{
-    //             marginBottom: "28px",
-    //           }}
-    //         >
-    //           <h1>Sign In</h1>
-    //         </div>
-    //         <Form>
-    //           <Form.Label>Username</Form.Label>
-    //           <Form.Group controlId="userName">
-    //             <Form.Control
-    //               type="text"
-    //               name="userName"
-    //               required
-    //               placeholder="UserName"
-    //               value={userName}
-    //               onChange={(e) => setUserName(e.target.value)}
-    //             />
-    //           </Form.Group>
-    //           <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-    //           <Form.Group controlId="password">
-    //             <Form.Control
-    //               type="password"
-    //               name="password"
-    //               required
-    //               placeholder="Password"
-    //               value={password}
-    //               onChange={(e) => setPasword(e.target.value)}
-    //             />
-    //           </Form.Group>
-    //           <Link>
-    //             <Button
-    //               type="submit"
-    //               style={{
-    //                 backgroundColor: "#005792",
-    //                 border: "none",
-    //                 color: "#FFFFFF",
-    //                 width: "350px",
-    //                 height: "50px",
-    //                 borderRadius: "5px",
-    //                 marginTop: "28px",
-    //               }}
-    //               onClick={() => {
-    //                 // history.push("/home");
-    //                 navigate('/home');
-    //                 props.onHandleLogin();
-    //               }}
-    //             >
-    //               Sign In
-    //             </Button>
-    //           </Link>
-    //         </Form>
-    //       </Modal.Body>
-    //     </Modal.Dialog>
-    //   </Row>
-    // </Col>
   );
 };
 
