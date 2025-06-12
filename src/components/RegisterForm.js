@@ -63,31 +63,64 @@ const RegisterForm = (props) => {
    <div class="form-heading d-flex align-items-center justify-content-center mx-8">Lengkapi data untuk membuat akun</div>
 
      <form className="mx-5">
-            <div className="mb-3">
-              <input type="email" className="form-control" placeholder="Masukkan email anda"
+     <div className="mb-3">
+            
+      <div className="input-group">
+        <span className="input-group-text bg-white">
+          <i className="bi bi-envelope"></i>
+        </span>
+        <input type="email" className="form-control border-start-0" placeholder="Masukkan email anda"
               value={email}
               onChange={(e) => {setEmail(e.target.value)}}
               />
+        </div>
             </div>
+
             <div className="mb-3">
-              <input type="text" className="form-control" placeholder="Nama depan"
+                <div className="input-group">
+        <span className="input-group-text bg-white">
+          <i className="bi bi-person"></i>
+        </span>
+              <input type="text" className="form-control border-start-0" placeholder="Nama depan"
                value={firstName}
               onChange={(e) => {setFirstName(e.target.value)}}
               />
+</div>
             </div>
             <div className="mb-3">
-              <input type="text" className="form-control" placeholder="Nama belakang"
+               <div className="input-group ">
+        <span className="input-group-text bg-white">
+          <i className="bi bi-person"></i>
+        </span>
+              <input type="text" className="form-control border-start-0" placeholder="Nama belakang"
                value={lastName}
               onChange={(e) => {setLastName(e.target.value)}}/>
+               </div>
             </div>
             <div className="mb-3">
-              <input type="password" className="form-control" placeholder="Buat password"
+              <div className="input-group">
+        <span className="input-group-text bg-white">
+          <i className="bi bi-lock"></i>
+        </span>
+              <input type="password" className="form-control border-start-0 border-end-0" placeholder="Buat password"
                value={password}
               onChange={(e) => {setPassword(e.target.value)}}
               />
+                <span class="input-group-text border-start-0 bg-white">
+        <i class="bi bi-eye" id="togglePassword" ></i>
+      </span>
+               </div>
             </div>
             <div className="mb-4">
-              <input type="password" className="form-control" placeholder="Konfirmasi password"/>
+               <div className="input-group">
+        <span className="input-group-text bg-white">
+          <i className="bi bi-lock"></i>
+        </span>
+              <input type="password" className="form-control border-start-0 border-end-0" placeholder="Konfirmasi password"/>
+              <span class="input-group-text border-start-0 bg-white">
+        <i class="bi bi-eye" id="togglePassword" ></i>
+      </span>
+              </div>
             </div>
             <button type="submit" className="btn btn-danger w-100"
             onClick={(e) =>{handleRegist(e)}}

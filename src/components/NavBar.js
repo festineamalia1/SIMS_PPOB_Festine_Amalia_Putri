@@ -7,9 +7,14 @@ import { redirect } from "react-router";
 // import Logout from "assets/images/logout.svg";
 import { API, BASE_URL } from "config/api";
 const NavBar = (props) => {
-  const [show, setShow] = useState(false);
+  const [active, setActive] = useState(false);
   const target = useRef(null);
   const navigate = useNavigate();
+
+  const handleMenu = (link) => {
+    navigate(`/${link}`)
+    setActive(true)
+  }
 
   return (
     <>
@@ -30,20 +35,20 @@ const NavBar = (props) => {
 
       <div class="ms-auto">
         <ul class="navbar-nav flex-row gap-3">
-          <li class="nav-item">
-            <div class="nav-link text-dark"
-            onClick={() => navigate(`/top-up`)}
+          <li className="nav-item nav-link-nonactive">
+            <div class="nav-link "
+            onClick={() => handleMenu(`top-up`)}
             >Top Up</div>
           </li>
-          <li class="nav-item">
-            <div class="nav-link text-dark"
-            onClick={() => navigate(`/transaksi`)}
+          <li className="nav-item nav-link-nonactive">
+            <div class="nav-link "
+            onClick={() => handleMenu(`transaksi`)}
             >Transaction</div>
             {/* <a class="nav-link text-dark" href={`${BASE_URL}/transaction`}>Transaction</a> */}
           </li>
-          <li class="nav-item">
-            <div class="nav-link text-dark" 
-            onClick={() => navigate(`/akun-page`)}>Akun</div>
+          <li className="nav-item nav-link-nonactive">
+            <div class="nav-link " 
+            onClick={() => handleMenu(`akun-page`)}>Akun</div>
           </li>
         </ul>
       </div>

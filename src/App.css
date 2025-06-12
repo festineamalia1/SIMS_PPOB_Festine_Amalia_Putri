@@ -105,6 +105,7 @@ align-items: center;
     .login-link {
       color: #d32f2f;
       text-decoration: none;
+      font-weight: 700;
     }
 
        .navbar-brand img {
@@ -257,6 +258,16 @@ align-items: center;
     .navbar-brand{
        cursor: pointer
     }
+    .nav-link {
+      font-size: 15px !important;
+     
+    }
+    .nav-link-nonactive{
+       color: #4e4e4e !important;
+    }
+    .nav-link-active{
+      color: #d32f2f !important;
+    }
 /* ---------------------------------------------------------------------------------------------------- */
 .logo-title{
   width: 383px;
@@ -272,21 +283,21 @@ input.form-control,
 textarea.form-control,
 div.form-control,
 select.form-control {
-  background-color: rgb(210, 210, 210, 0.25) !important;
+  /* background-color: rgb(210, 210, 210, 0.25) !important; */
   
-  border: 2px solid #bcbcbc;
+  /* border: 2px solid #bcbcbc; */
   outline: none;
   box-shadow: 0 0 0 0.2rem transparent;
 }
 
-textarea:focus,
+input-group:focus,textarea:focus,
 textarea.form-control:focus,
 input.form-control:focus,
 div.form-control:focus,
 input:focus {
   
   box-shadow: 0 0 0 0 #ffffff;
- border: 2px solid #ffffff !important;
+ /* border: 2px solid #ffffff !important; */
 }
 
 .btn-danger:not(:disabled):not(.disabled).active:focus,
