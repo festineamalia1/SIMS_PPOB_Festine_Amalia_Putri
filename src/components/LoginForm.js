@@ -9,12 +9,10 @@ import axios from "axios";
 
 const LoginForm = (props) => {
   const navigate = useNavigate ();
-  // const handleLogin = () => {
-  //   history.push(`/home`);
-  // };
 
-  const [userName, setUserName] = useState("");
-  const [password, setPasword] = useState("");
+   const [see, setSee] = useState(false);
+     const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
     const handleLogin = (e) => {
          e.preventDefault();
       const headers = {
@@ -24,8 +22,8 @@ const LoginForm = (props) => {
         .post(
           `${API}/login`,
         {
-          email: "user@nutech-integrasi.com",
-          password: "abcdef1234"
+          email: email,
+          password: password
         },
           {
             headers: headers,
@@ -61,11 +59,23 @@ const LoginForm = (props) => {
 
      <form className="mx-5">
             <div className="mb-3">
-              <input type="email" className="form-control" placeholder="Masukkan email anda"/>
+               <div className="input-group">
+         <span className="input-group-text bg-white">
+           <i className="bi bi-envelope"></i>
+         </span>
+         <input type="email" className="form-control border-start-0" placeholder="Masukkan email anda" value={email} onChange={(e)=> {setEmail(e.target.value)}} />
+       </div>
             </div>
            
             <div className="mb-3">
-              <input type="password" className="form-control" placeholder="Password Anda"/>
+              <div className="input-group">
+         <span className="input-group-text bg-white">
+           <i className="bi bi-lock"></i>
+         </span>
+         <input type={see==false ? `password` : `text`} className="form-control border-start-0 border-end-0" placeholder="Buat password" value={password} onChange={(e)=> {setPassword(e.target.value)}} /> { see == false ? <span class="input-group-text border-start-0 bg-white" onClick={()=> setSee(true)} > <i class="bi bi-eye" id="togglePassword"></i>
+         </span> : <span class="input-group-text border-start-0 bg-white" onClick={()=> setSee(false)}> <i class="bi bi-eye-slash" id="togglePassword"></i>
+         </span> }
+       </div>
             </div>
            
             <button type="submit" className="btn btn-danger w-100"
@@ -76,66 +86,7 @@ const LoginForm = (props) => {
    </>
     
           
-    // <Col>
-    //   <Row>
-    //     <Modal.Dialog>
-    //       <Modal.Body>
-    //         <div
-    //           style={{
-    //             marginBottom: "28px",
-    //           }}
-    //         >
-    //           <h1>Sign In</h1>
-    //         </div>
-    //         <Form>
-    //           <Form.Label>Username</Form.Label>
-    //           <Form.Group controlId="userName">
-    //             <Form.Control
-    //               type="text"
-    //               name="userName"
-    //               required
-    //               placeholder="UserName"
-    //               value={userName}
-    //               onChange={(e) => setUserName(e.target.value)}
-    //             />
-    //           </Form.Group>
-    //           <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-    //           <Form.Group controlId="password">
-    //             <Form.Control
-    //               type="password"
-    //               name="password"
-    //               required
-    //               placeholder="Password"
-    //               value={password}
-    //               onChange={(e) => setPasword(e.target.value)}
-    //             />
-    //           </Form.Group>
-    //           <Link>
-    //             <Button
-    //               type="submit"
-    //               style={{
-    //                 backgroundColor: "#005792",
-    //                 border: "none",
-    //                 color: "#FFFFFF",
-    //                 width: "350px",
-    //                 height: "50px",
-    //                 borderRadius: "5px",
-    //                 marginTop: "28px",
-    //               }}
-    //               onClick={() => {
-    //                 // history.push("/home");
-    //                 navigate('/home');
-    //                 props.onHandleLogin();
-    //               }}
-    //             >
-    //               Sign In
-    //             </Button>
-    //           </Link>
-    //         </Form>
-    //       </Modal.Body>
-    //     </Modal.Dialog>
-    //   </Row>
-    // </Col>
+    
   );
 };
 

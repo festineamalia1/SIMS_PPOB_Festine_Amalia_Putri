@@ -50,6 +50,11 @@ const handleEditProfile = (e) => {
   };
   const StatusLog = window.localStorage.getItem("LogStatus");
 
+  const handleLogout= () => {
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+
   return (
    <>
     {/* <div class="col d-flex align-items-center justify-content-center mx-8">Nama Profile</div> */}
@@ -95,7 +100,9 @@ const handleEditProfile = (e) => {
                   >Edit Profile</button>
                   </div>
                     <div className="row mt-3 px-5">
-           <button type="submit" className="btn btn-danger w-100">Logout</button>
+           <button type="button" className="btn btn-danger w-100"
+           onClick={() => handleLogout()}
+           >Logout</button>
         </div>
                   </>
               }
