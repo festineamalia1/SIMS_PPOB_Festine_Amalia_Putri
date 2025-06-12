@@ -17,6 +17,8 @@ const RegisterForm = (props) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+   const [see, setSee] = useState(false);
+      const [seeKon, setSeeKon] = useState(false);
 
     const handleRegist = (e) => {
        e.preventDefault();
@@ -102,13 +104,22 @@ const RegisterForm = (props) => {
         <span className="input-group-text bg-white">
           <i className="bi bi-lock"></i>
         </span>
-              <input type="password" className="form-control border-start-0 border-end-0" placeholder="Buat password"
+              <input type={see == false ? `password` : `text`} className="form-control border-start-0 border-end-0" placeholder="Buat password"
                value={password}
               onChange={(e) => {setPassword(e.target.value)}}
               />
-                <span class="input-group-text border-start-0 bg-white">
+                {
+                see == false ?
+                          <span class="input-group-text border-start-0 bg-white"
+                          onClick={() => setSee(true)}
+                          >
         <i class="bi bi-eye" id="togglePassword" ></i>
       </span>
+      :
+              <span class="input-group-text border-start-0 bg-white" onClick={() => setSee(false)}>
+        <i class="bi bi-eye-slash" id="togglePassword" ></i>
+      </span>
+               }
                </div>
             </div>
             <div className="mb-4">
@@ -116,10 +127,21 @@ const RegisterForm = (props) => {
         <span className="input-group-text bg-white">
           <i className="bi bi-lock"></i>
         </span>
-              <input type="password" className="form-control border-start-0 border-end-0" placeholder="Konfirmasi password"/>
-              <span class="input-group-text border-start-0 bg-white">
+              <input type={seeKon == false ? `password` : `text`} className="form-control border-start-0 border-end-0" placeholder="Konfirmasi password"/>
+               {
+                seeKon == false ?
+                          <span class="input-group-text border-start-0 bg-white"
+                          onClick={() => setSeeKon(true)}
+                          >
         <i class="bi bi-eye" id="togglePassword" ></i>
       </span>
+      :
+              <span class="input-group-text border-start-0 bg-white" onClick={() => setSeeKon(false)}>
+        <i class="bi bi-eye-slash" id="togglePassword" ></i>
+      </span>
+               }
+     
+      
               </div>
             </div>
             <button type="submit" className="btn btn-danger w-100"
