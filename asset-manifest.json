@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/SIMS_PPOB_Festine_Amalia_Putri/static/css/main.636ba755.css",
-    "main.js": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/main.59708343.js",
+    "main.css": "/SIMS_PPOB_Festine_Amalia_Putri/static/css/main.846f51a7.css",
+    "main.js": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/main.9549c155.js",
     "static/js/453.0001feb9.chunk.js": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/453.0001feb9.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/SIMS_PPOB_Festine_Amalia_Putri/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/Illustrasi-Login.png": "/SIMS_PPOB_Festine_Amalia_Putri/static/media/Illustrasi-Login.90372604dd5abec0856f.png",
+    "static/media/bootstrap-icons.woff2?": "/SIMS_PPOB_Festine_Amalia_Putri/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "index.html": "/SIMS_PPOB_Festine_Amalia_Putri/index.html",
-    "main.636ba755.css.map": "/SIMS_PPOB_Festine_Amalia_Putri/static/css/main.636ba755.css.map",
-    "main.59708343.js.map": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/main.59708343.js.map",
+    "main.846f51a7.css.map": "/SIMS_PPOB_Festine_Amalia_Putri/static/css/main.846f51a7.css.map",
+    "main.9549c155.js.map": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/main.9549c155.js.map",
     "453.0001feb9.chunk.js.map": "/SIMS_PPOB_Festine_Amalia_Putri/static/js/453.0001feb9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.636ba755.css",
-    "static/js/main.59708343.js"
+    "static/css/main.846f51a7.css",
+    "static/js/main.9549c155.js"
   ]
 }
