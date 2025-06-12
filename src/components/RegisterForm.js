@@ -17,6 +17,7 @@ const RegisterForm = (props) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+   const [konfirm, setKonfirm] = useState("");
    const [see, setSee] = useState(false);
       const [seeKon, setSeeKon] = useState(false);
 
@@ -127,7 +128,10 @@ const RegisterForm = (props) => {
         <span className="input-group-text bg-white">
           <i className="bi bi-lock"></i>
         </span>
-              <input type={seeKon == false ? `password` : `text`} className="form-control border-start-0 border-end-0" placeholder="Konfirmasi password"/>
+              <input type={seeKon == false ? `password` : `text`} className="form-control border-start-0 border-end-0" placeholder="Konfirmasi password"
+               value={konfirm}
+              onChange={(e) => {setKonfirm(e.target.value)}}
+              />
                {
                 seeKon == false ?
                           <span class="input-group-text border-start-0 bg-white"
@@ -143,7 +147,14 @@ const RegisterForm = (props) => {
      
       
               </div>
+              {
+                konfirm == password ? 
+                '' 
+                :<span className="konfirm-pass">Konfirmasi password harus sesuai</span>
+              }
+               
             </div>
+           
             <button type="submit" className="btn btn-danger w-100"
             onClick={(e) =>{handleRegist(e)}}
             >Registrasi</button>
