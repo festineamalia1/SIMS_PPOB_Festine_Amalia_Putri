@@ -140,7 +140,7 @@ const fetchDataProfile = () => {
       <form className="">
             <div className="mb-3">
               <input type="text" className="form-control" 
-              placeholder="Masukkan Npminal To up"
+              placeholder="Masukkan Nominal To up"
               value={nominalTopup}
               onChange={(e) => setNominalTopup(e.target.value)}
               />
@@ -156,25 +156,30 @@ const fetchDataProfile = () => {
      <div className="col-md-5 ">
       <div className="row mb-3">
         <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 10.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100"
+          onClick={() => setNominalTopup(10000)}
+          >Rp. 10.000</button>
         </div>
         <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 20.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100"
+          onClick={() => setNominalTopup(20000)}
+          >Rp. 20.000</button>
           </div>
         <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 30.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100"  onClick={() => setNominalTopup(30000)}>Rp. 30.000</button>
         </div>
 
       </div>
        <div className="row">
        <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 100.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100" onClick={() => setNominalTopup(100000)}>Rp. 100.000</button>
         </div>
         <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 250.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100"
+          onClick={() => setNominalTopup(250000)}>Rp. 250.000</button>
           </div>
         <div className="col">
-          <button type="button" className="btn btn-outline-secondary w-100">Rp. 500.000</button>
+          <button type="button" className="btn btn-outline-secondary w-100"onClick={() => setNominalTopup(500000)}>Rp. 500.000</button>
         </div>
       </div>
      </div>

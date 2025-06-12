@@ -5,6 +5,7 @@ import Switch from "react-bootstrap/esm/Switch";
 import PrivateRoute from "./components/PrivateRoute";
 import 'bootstrap/dist/css/bootstrap.css';
  import { HashRouter , Route, BrowserRouter, Routes } from "react-router-dom";
+ import 'bootstrap-icons/font/bootstrap-icons.css';
 import LandingPage from "pages/LandingPage";
 import Home from "pages/Home";
 import TopUp from "pages/TopUp";

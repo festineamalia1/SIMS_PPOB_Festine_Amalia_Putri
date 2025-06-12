@@ -119,7 +119,6 @@ console.log("data benner", dataBanner?.data?.data)
 
 
 
-
   useEffect(() => {
     fetchDataProfile();
     fetchDataBalance();
@@ -127,6 +126,7 @@ console.log("data benner", dataBanner?.data?.data)
     fetchDataBanner();
   }, []);
 
+  
   console.log("userData", userData?.data?.data?.first_name);
 
   return (

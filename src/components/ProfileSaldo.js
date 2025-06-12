@@ -8,8 +8,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { API } from "config/api";
 const ProfileSaldo = ({firstName, LastName, foto, balance}) => {
   const [show, setShow] = useState(false);
+  const [point, setPoint] = useState([]);
   const target = useRef(null);
   const navigate = useNavigate();
+
+  const formatBalance = balance?.toLocaleString('id-ID', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+ 
+    const obfuscateSaldo = () => {
+      const ubah = balance?.toLocaleString('id-ID');
+    const length = ubah?.length - 3; // jumlah karakter saldo (tanpa "Rp ")
+
+    return  '•'.repeat(length);
+  };
+
+  console.log("obfuscateSaldo", obfuscateSaldo())
 
   return (
       <div className="container">
@@ -29,8 +46,23 @@ const ProfileSaldo = ({firstName, LastName, foto, balance}) => {
     <div className="col-md-8">
       <div className="saldo-card">
         <div className="mb-1">Saldo anda</div>
-        <div className="text-balance">Rp {balance}</div>
-        <div className="lihat-saldo">Lihat Saldo 👁️</div>
+        <div className="text-balance">Rp {
+          show == true ?
+        formatBalance : obfuscateSaldo()
+        }
+        </div>
+         {
+          show == true ?
+         <div className="lihat-saldo"
+        onClick={() => {setShow(false)}}
+        >sembunyikan saldo&nbsp;<i className="bi bi bi-eye-slash"></i>
+        </div> : 
+         <div className="lihat-saldo"
+        onClick={() => {setShow(true)}}
+        >Lihat Saldo&nbsp;<i className="bi bi-eye"></i>
+        </div>
+        }
+       
       </div>
     </div>
   </div>

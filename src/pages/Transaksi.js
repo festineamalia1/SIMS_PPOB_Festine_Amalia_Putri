@@ -26,39 +26,7 @@ export default function Transaksi() {
   const [dataBalance, setDataBalance] = useState([]);
 
 
- const myDummy = 
-       {
-  "status": 0,
-  "message": "Get History Berhasil",
-  "data": {
-    "offset": 0,
-    "limit": 3,
-    "records": [
-      {
-        "invoice_number": "INV17082023-001",
-        "transaction_type": "TOPUP",
-        "description": "Top Up balance",
-        "total_amount": 100000,
-        "created_on": "2023-08-17T10:10:10.000Z"
-      },
-      {
-        "invoice_number": "INV17082023-002",
-        "transaction_type": "PAYMENT",
-        "description": "PLN Pascabayar",
-        "total_amount": 10000,
-        "created_on": "2023-08-17T11:10:10.000Z"
-      },
-      {
-        "invoice_number": "INV17082023-003",
-        "transaction_type": "PAYMENT",
-        "description": "Pulsa Indosat",
-        "total_amount": 40000,
-        "created_on": "2023-08-17T12:10:10.000Z"
-      }
-    ]
-  }
-}
-      ;
+
 
         const [dataHistory, setDataHistory] = useState([]);
 
@@ -138,8 +106,17 @@ console.log('TOKEN', TOKEN)
   };
 
 
-  
+    
 
+   const handleFormatUang = (uang) => {
+      const formatUang = uang?.toLocaleString('id-ID', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+    return  formatUang;
+  };
 
 console.log('history', dataHistory)
 
@@ -188,16 +165,16 @@ console.log('history', dataHistory)
     <div className="row">
       <div className="col">
         <div className="row">
-           <div className="fw-bold fs-5"> 
+           <div className={`fw-bold fs-5 ${data.transaction_type == "TOPUP" ? `font-transaksi-plus` : data.transaction_type == "PAYMENT" ? `font-transaksi-min` : ''}`}> 
             {data.transaction_type == "TOPUP" ? "+ " : data.transaction_type == "PAYMENT" ? "- " : ''}
-             RP. {data.total_amount}
+             RP. {handleFormatUang(data.total_amount)}
           </div>
         </div>
         <div className="row">
           <span>{moment(data.created_on).format('MMMM Do YYYY, h:mm:ss a')}</span>
           </div>
       </div>
-      <div className="col ">
+      <div className="col d-flex  justify-content-end">
         <span>{data.description}</span>
       </div>
     </div>
@@ -207,10 +184,10 @@ console.log('history', dataHistory)
      
         </div>
         ))} 
-        <div className="row mt-5">
-          <div class="login-text">
-              <a className="login-link" onClick={increment} >di sini</a>
-            </div>
+        <div className="row mt-3 mb-5">
+          <div className="col d-flex align-items-center justify-content-center">
+              <div className="font-transaksi" onClick={increment} >Show More</div>
+          </div>
         </div>
       </div>
     </section>

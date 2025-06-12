@@ -147,7 +147,6 @@ align-items: center;
 
     .lihat-saldo {
       font-size: 0.85rem;
-      text-decoration: underline;
       color: white;
       margin-top: 10px;
       display: inline-block;
@@ -186,13 +185,6 @@ align-items: center;
       font-weight: 500;
     }
 
-    .lihat-saldo {
-      font-size: 0.85rem;
-      text-decoration: underline;
-      color: white;
-      margin-top: 10px;
-      display: inline-block;
-    }
 
       .list-layanan{
     display: grid;
@@ -246,7 +238,25 @@ align-items: center;
     .logo-sims{
       width: 50px;
     }
+    .font-transaksi-min{
+   color: #d32f2f;
+}
+   .font-transaksi-plus{
+   color: #56a075;
+}
 
+  .font-transaksi {
+      color: #d32f2f;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer
+    }
+    .nav-item{
+      cursor: pointer
+    }
+    .navbar-brand{
+       cursor: pointer
+    }
 /* ---------------------------------------------------------------------------------------------------- */
 .logo-title{
   width: 383px;
